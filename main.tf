@@ -1,6 +1,6 @@
 provider "kubernetes" {
-  config_path            = "~/.kube/config"
   cluster_ca_certificate = base64decode(var.kubernetes_cluster_cert_data)
+  //config_path            = "~/.kube/config"
   host                   = var.kubernetes_cluster_endpoint
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
@@ -11,7 +11,7 @@ provider "kubernetes" {
 
 provider "helm" {
   kubernetes {
-    config_path            = "~/.kube/config"
+    //config_path            = "~/.kube/config"
     cluster_ca_certificate = base64decode(var.kubernetes_cluster_cert_data)
     host                   = var.kubernetes_cluster_endpoint
     exec {
